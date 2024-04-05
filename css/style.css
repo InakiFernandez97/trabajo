@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    flex: 0 0 auto; /* Establece el tamaño de la imagen */
+    margin-right: 20px; /* Espacio entre la imagen y el título */
+  }
+  
+  .logo img {
+    max-width: 30px; /* Tamaño máximo de la imagen */
+  }
+  
+  .titulo h1 {
+    margin: 0; /* Elimina el margen predeterminado del encabezado */
+  }
+
+  body {
+    background-color: black; /* Establece el color de fondo de la página en negro */
+    color: white; /* Establece el color del texto en blanco */
+  }
+
+  head {
+    background-color: black; /* Establece el color de fondo de la página en negro */
+    color: white; /* Establece el color del texto en blanco */
+  }
