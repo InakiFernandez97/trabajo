@@ -4,7 +4,17 @@ header {
     background-color: white;
   }
   
-  
+  .bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+  }
+
+
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(92,46,78, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+   }
+   
   .logo {
     flex: 0 0 auto; /* Establece el tamaño de la imagen */
     margin-right: 20px; /* Espacio entre la imagen y el título */
@@ -23,6 +33,7 @@ header {
     color: rgb(0, 0, 0); /* Establece el color del texto en blanco */
   }
 
+  
   head {
     background-color: white; /* Establece el color de fondo de la página en negro */
     color: white; /* Establece el color del texto en blanco */
@@ -30,8 +41,14 @@ header {
 
   footer {
     background-color: rgb(0, 0, 0) !important;
-    color: rgb(255, 248, 248);
+    color: white;
     padding: 20px;
+  
+  }
+
+  footer a{
+    color: white;
+    text-decoration: none;
   }
   
   navegador{
