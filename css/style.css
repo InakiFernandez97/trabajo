@@ -26,6 +26,9 @@ header {
     color: white; /* Establece el color del texto en blanco */
   }
 
-  footer{
-    background-color: black; color: rgb(255, 248, 248); padding: 20px;
+  footer {
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(255, 248, 248);
+    padding: 20px;
   }
+  
