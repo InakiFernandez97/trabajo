@@ -1,7 +1,7 @@
 header {
     display: flex;
     align-items: center;
-    background-color: black;
+    background-color: white;
   }
   
   
@@ -19,7 +19,7 @@ header {
   }
 
   body {
-    background-color: rgb(6, 6, 6); /* Establece el color de fondo de la página en negro */
+    background-color: white; /* Establece el color de fondo de la página en negro */
     color: rgb(0, 0, 0); /* Establece el color del texto en blanco */
   }
 
