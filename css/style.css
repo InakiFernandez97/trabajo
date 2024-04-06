@@ -1,7 +1,9 @@
 header {
     display: flex;
     align-items: center;
+    background-color: black;
   }
+  
   
   .logo {
     flex: 0 0 auto; /* Establece el tamaño de la imagen */
@@ -22,7 +24,7 @@ header {
   }
 
   head {
-    background-color: black; /* Establece el color de fondo de la página en negro */
+    background-color: white; /* Establece el color de fondo de la página en negro */
     color: white; /* Establece el color del texto en blanco */
   }
 
@@ -32,3 +34,7 @@ header {
     padding: 20px;
   }
   
+  navegador{
+    background-color: white;
+    
+  }
