@@ -80,7 +80,105 @@
   <div class="row mb-3 text-center">
     <div class="col-4 themed-grid-col">
         <div>
-          acá va a ir la barra para filtrar teléfonos
+
+          <h5 class="font-weight-bold mb-3">Filtros</h5>
+            <div>
+              <div class="accordion" id="filterAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="brandHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#brandCollapse" aria-expanded="false" aria-controls="brandCollapse">
+                      Marca
+                    </button>
+                  </h2>
+                  <div id="brandCollapse" class="accordion-collapse collapse" aria-labelledby="brandHeading" data-bs-parent="#filterAccordion">
+                    <div class="accordion-body">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="apple" id="MarcaApple">
+                        <label class="form-check-label" for="MarcaApple">
+                          Apple
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="samsung" id="MarcaSamsung">
+                        <label class="form-check-label" for="MarcaSamsung">
+                          Samsung
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="xiaomi" id="MarcaXiaomi">
+                        <label class="form-check-label" for="MarcaXiaomi">
+                          Xiaomi
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="honor" id="MarcaHonor">
+                        <label class="form-check-label" for="MarcaHonor">
+                          Honor
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="almHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#almCollapse" aria-expanded="false" aria-controls="almCollapse">
+                      Almacenamiento
+                    </button>
+                  </h2>
+                  <div id="almCollapse" class="accordion-collapse collapse" aria-labelledby="almHeading" data-bs-parent="#filterAccordion">
+                    <div class="accordion-body">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="64" id="alm64">
+                        <label class="form-check-label" for="alm64">
+                          64GB
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="128" id="alm128">
+                        <label class="form-check-label" for="alm128">
+                          128GB
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="512" id="alm512">
+                        <label class="form-check-label" for="alm512">
+                          512GB
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="priceHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#priceCollapse" aria-expanded="false" aria-controls="priceCollapse">
+                      Precio
+                    </button>
+                  </h2>
+                  <div id="priceCollapse" class="accordion-collapse collapse" aria-labelledby="priceHeading" data-bs-parent="#filterAccordion">
+                    <div class="accordion-body">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="100-250" id="precio1">
+                        <label class="form-check-label" for="precio1">
+                          $100.000 - $250.000
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="300-600" id="precio2">
+                        <label class="form-check-label" for="precio2">
+                          $300.000 - $600.000
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="650-1200" id="precio3">
+                        <label class="form-check-label" for="precio3">
+                          $650.000 - $1.200.000
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           
         </div>
 
