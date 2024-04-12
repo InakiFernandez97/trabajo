@@ -14,7 +14,21 @@
 
   <div class="ms-auto">
   </div>
-  <a class="nav-link ms-0">Carrito de compras</a>
+  <a class="nav-link ms-0" data-bs-toggle="offcanvas" href="#offcanvasExample">Carrito de compras</a>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito de compras</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        No hay nada en tu carrito de compras.
+      </div>
+      <div class="dropdown mt-3">
+        </ul>
+      </div>
+    </div>
+  </div>
   <a class="nav-link ms-0" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
 
   <!-- Login Modal -->
@@ -91,7 +105,26 @@
           <h5 class="card-title">iPhone 14 Pro</h5>
           <p class="card-text">Apple </p>
           <h5>$899.990</h5>
-          <a href="#" class="btn btn-primary">Agregar al carrito</a>
+          <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  Agregar al carrito
+</a>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito de compras</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+<ul>
+  <li> 1x iPhone 14 Pro</li>
+</ul>    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary" type="button">
+        Finalizar Compra
+      </button>
+    </div>
+  </div>
+</div>
           <br>
           <br>
           <h6>Especificaciones Técnicas</h6>
