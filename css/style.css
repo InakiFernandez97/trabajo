@@ -63,5 +63,15 @@ header {
     margin-right: auto;
 
   }
-
+  label.error{
+    color: red;
+  }
+  input.error{
+    border:1px solid red;
+  }
   
+  
+  .form_contact_img{
+    display: flex;
+    justify-content: center;
+  }
