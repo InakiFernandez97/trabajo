@@ -36,6 +36,6 @@ function validar() {
     }
 
 
-    alert('¡Formulario enviado correctamente!')
+    alert('¡Registrado correctamente!')
       
   }

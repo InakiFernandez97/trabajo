@@ -75,3 +75,14 @@ header {
     display: flex;
     justify-content: center;
   }
+
+  #contactform{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contactformm{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/contact_style.css">
+  <script src="js/login.js"></script>
+
 </head>
 <header>
 
@@ -40,7 +42,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="index.html" method="post" onsubmit="return validarLogin();">
             <div class="mb-3">
               <label for="email" class="form-label">Correo electrónico</label>
               <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
@@ -48,15 +50,15 @@
             <div class="mb-3">
               <label for="password" class="form-label">Contraseña</label>
               <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="loginButton">Iniciar sesión</button>
+      
+                <a href="registro.html"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Registrarse</button></a>
+              </div>
             </div>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Iniciar sesión</button>
-          <a href="registro.html">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Registrarse</button>
-          </a>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -98,52 +100,21 @@
   <div class="col-2"></div>
   <div class="col-8">
   <div class="card text-center text-dark px-5" ><br>
-    <h2>Formulario de Contacto</h2>
     <div class="form_contact_img"><img src="imagenes/contact-form.png" alt="imagen_formulario" height="75" width="75" ></div>
     <br>
-    <form action="" id="contactform">
-      <label for="nombre">Nombre</label>
-      <input type="text" name="nombre" id="nombre">
-      <br>
-      <br>
-      <label for="apellido">Apellido</label>
-      <input type="text" name="apellido" id="apellido">
-      <br>
-      <br>
-      <label for="correo">Correo</label>
-      <input type="email" name="correo" id="correo">
-      <br><br>
-      <label for="tipo_solicitud">Tipo de Solicitud</label>
-      <select name="tipo_solicitud" id="tipo_solicitud">
-        <option value="sugerencia">Sugerencia</option>
-        <option value="reclamo">Reclamo</option>
-        <option value="consulta">Consulta</option>
-        </select>
-        <br><br>
-        <label for="mensaje">Mensaje</label>
-        <br>
-        <textarea name="mensaje" id="mensaje" cols="20" rows="10"></textarea>
-        <br>
-        <input type="checkbox" name="avisos" id="avisos">
-        <label for="avisos">¿Desea recibir sugerencias o avisos?</label>
-        <button type="button" id="guardar">Guardar</button>
-        <button type="reset">Limpiar</button>
-      
-
-
-    </form>
-    <form class="form">
+    <div class="contactformm"><form class="form" id="contactform">
       <div class="title">Formulario de contacto</div>
-      <input type="text" placeholder="Nombre" name="nombre" class="input" id="nombre">
-      <input type="text"placeholder="Apellido" id="apellido">
-      <input type="text"placeholder="Correo" id="correo">
-      <textarea placeholder="Mensaje"></textarea>
+      <input type="text" placeholder="Nombre" name="nombre" id="nombre">
+      <input type="text"placeholder="Apellido" name="apellido" id="apellido">
+      <input type="text"placeholder="Correo" name="correo" id="correo">
+      <textarea placeholder="Mensaje" name="mensaje" id="mensaje"></textarea>
       
-       <div><button>Enviar</button>
+       <div><button type="submit">Enviar</button>
       <button type="reset">Limpiar</button></div>
       
       
-  </form>
+  </form></div>
+    
     <br>
   </div></div></div>
     <br>

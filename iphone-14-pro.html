@@ -10,6 +10,8 @@
   <script src="js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
+
 
 </head>
 <header>
@@ -43,7 +45,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="index.html" method="post" onsubmit="return validarLogin();">
             <div class="mb-3">
               <label for="email" class="form-label">Correo electrónico</label>
               <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
@@ -51,15 +53,15 @@
             <div class="mb-3">
               <label for="password" class="form-label">Contraseña</label>
               <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="loginButton">Iniciar sesión</button>
+      
+                <a href="registro.html"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Registrarse</button></a>
+              </div>
             </div>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Iniciar sesión</button>
-          <a href="registro.html">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Registrarse</button>
-          </a>
-        </div>
+        
       </div>
     </div>
   </div>
