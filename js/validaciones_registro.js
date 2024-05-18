@@ -7,7 +7,7 @@ function validar() {
   
     const nameRegex = /^[a-zA-Z]/;
     const name2Regex = /^[a-zA-Z]/;
-    const emailRegex = /^[\w\.-]+@(gmail\.com|duoc\.cl)$/;
+    const emailRegex = /^[\w\.-]+@(gmail\.com|duocuc\.cl)$/;
     const passRegex = /^\S{8,}$/;
     const showError = (message) => {
       alert(message);
@@ -24,7 +24,7 @@ function validar() {
     }
   
     if (!emailRegex.test(emailField.value)) {
-      showError("Por favor ingresa un correo válido, que sea @gmail.com o duoc.cl");
+      showError("Por favor ingresa un correo válido, que sea @gmail.com o duocuc.cl");
       return;
     }
   
