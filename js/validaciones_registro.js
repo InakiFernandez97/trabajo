@@ -8,6 +8,8 @@ function validar() {
     const nameRegex = /^[a-zA-Z]/;
     const name2Regex = /^[a-zA-Z]/;
     const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+    const emailRegex = ["gmail", "duocuc", "outlook", "hotmail"];
+    emailRegex.includes("gmail", "duocuc", "outlook", "hotmail");
     const passRegex = /^\S{8,}$/;
     const showError = (message) => {
       alert(message);
