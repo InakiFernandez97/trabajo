@@ -7,13 +7,13 @@
   <title>SkyPhone - Inicio</title>
   <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <script src="js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="js/login.js"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="{% static 'js/login.js' %}"></script>
 </head>
 <header>
 
 
-  <div class="ms-auto">
+<div class="ms-auto">
   </div>
   <a class="nav-link ms-0" data-bs-toggle="offcanvas" href="#offcanvasExample">Carrito de compras</a>
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -74,20 +74,20 @@
 
   <nav class="navbar navbar-expand-lg p-3 mb-2 bg-light text-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"><img loading="lazy" src="{% static 'imagenes/logo.png' %}" height="100" width="100" alt="Logo" class="logo"></a>
-      <a class="navbar-brand" href="index.html">SkyPhone</a>
+      <a class="navbar-brand" href="{% url 'index' %}"><img loading="lazy" src="{% static 'imagenes/logo.png' %}" height="100" width="100" alt="Logo" class="logo"></a>
+      <a class="navbar-brand" href="{% url 'index' %}">SkyPhone</a>
       <button class="navbar-toggler" type="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
           </li>
-          <li><a class="nav-link active" aria-current="page" href="catalogo.html">Catálogo</a></li>
+          <li><a class="nav-link active" aria-current="page" href="{% url 'catalogo' %}">Catálogo</a></li>
     
-          <li><a class="nav-link active" aria-current="page" href="nosotros.html">Nosotros</a></li>
-          <li><a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a></li>
+          <li><a class="nav-link active" aria-current="page" href="{% url 'nosotros' %}">Nosotros</a></li>
+          <li><a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">Contacto</a></li>
 
         </ul>
         <form class="d-flex" role="search">
@@ -101,16 +101,16 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="card">
-          <img src="imagenes/apple_black_banner.webp">
+          <img src="{% static 'imagenes/apple_black_banner.webp' %}">
         </div>
       </div>
       <div class="carousel-item">
-          <div class="card"><img src="imagenes/S24_Ultra_Banner.webp" class="" alt="iphone 14 pro" ></div>
+          <div class="card"><img src="{% static 'imagenes/S24_Ultra_Banner.webp' %} " class="" alt="iphone 14 pro" ></div>
         
       </div>
       <div class="carousel-item">
         <div class="card">
-          <img src="imagenes/Galaxy-S23-banner.jpg" class="" alt="samsung s23" >
+          <img src="{% static 'imagenes/Galaxy-S23-banner.jpg' %}" class="" alt="samsung s23" >
         </div>
         
       </div>
@@ -133,19 +133,19 @@
         <div class="col" id="socialnetworks">
           <h4>Redes Sociales</h4>
           <ul>
-            <li><a href="facebook"><img src="imagenes/logo-facebook.png" alt="Facebook" width="25"> SkyPhone</a>  </li>
-            <li><a href="X"><img src="imagenes/logo-x.webp" alt="X" width="26"> SkyPhone</a> </li>
-            <li><a href="Instagram"><img src="imagenes/logo-ig.png" alt="Instagram" width="35"> SkyPhone</a></li>
+            <li><a href="facebook"><img src="{% static 'imagenes/logo-facebook.png' %}" alt="Facebook" width="25"> SkyPhone</a>  </li>
+            <li><a href="X"><img src="{% static 'imagenes/logo-x.webp' %} " alt="X" width="26"> SkyPhone</a> </li>
+            <li><a href="Instagram"><img src="{% static 'imagenes/logo-ig.png' %} " alt="Instagram" width="35"> SkyPhone</a></li>
           </ul>
         </div>
         <div class="col"></div>
         <div class="col">
           <h4 >Enlaces</h4>
           <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="nosotros.html">Sobre Nosotros</a></li>
-            <li><a href="normativas.html">Normativas Legales</a></li>
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            <li><a href="{% url 'nosotros' %}">Sobre Nosotros</a></li>
+            <!-- <li><a href="normativas.html">Normativas Legales</a></li> -->
           </ul>
         </div>
         </div>
@@ -159,7 +159,6 @@
 
 </body>
 </html>
-  </body>
   
     
    

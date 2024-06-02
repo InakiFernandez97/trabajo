@@ -4,13 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Registro</title>
+  <title>Galaxy S23 Ultra</title>
   <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <link rel="stylesheet" href="{% static 'css/Login-Form-Basic-icons.css' %}">
-  <link rel="stylesheet" href="{% static 'css/registro.css' %}">
   <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="{% static 'js/validaciones_registro.js' %}"></script>
   <script src="{% static 'js/login.js' %}"></script>
 
 </head>
@@ -19,10 +16,10 @@
 
   <div class="ms-auto">
   </div>
-  <a class="nav-link ms-0" data-bs-toggle="offcanvas" href="#offcanvasExample">Carrito de compras</a>
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <a class="nav-link ms-0" data-bs-toggle="offcanvas" href="#offcanvasExample1">Carrito de compras</a>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample1" aria-labelledby="offcanvasExample1Label">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito de compras</h5>
+      <h5 class="offcanvas-title" id="offcanvasExample1Label">Carrito de compras</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -67,8 +64,6 @@
   </div>
 </div>
 
-  <br>
-
 
 
 
@@ -89,7 +84,7 @@
             <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
           </li>
           <li><a class="nav-link active" aria-current="page" href="{% url 'catalogo' %}">Catálogo</a></li>
- 
+    
           <li><a class="nav-link active" aria-current="page" href="{% url 'nosotros' %}">Nosotros</a></li>
           <li><a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">Contacto</a></li>
 
@@ -101,81 +96,93 @@
       </div>
     </div>
   </nav>
-  <section class="position-relative py-4 py-xl-5">
-    <div class="container">
-        <div class="row mb-5">
-        </div>
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-6 col-xl-4">
-                <div class="card mb-5">
-                    <div class="card-body d-flex flex-column align-items-center">
-                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4" style="background: rgb(76, 85, 241);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
-                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"></path>
-                            </svg></div>
-                            <form method="post" class="form" id="form">
-                              <p class="title">Registro </p>
-                              <p class="message">¡Regístrate en nuestro sitio y podrás acceder a un montón de beneficios! </p>
-                                  <div class="flex">
-                                  <label>
-                                      <input required="" placeholder="" type="text" class="input" id="nombre" name="nombre">
-                                      <span>Nombre</span>
-                                  </label>
-                          
-                                  <label>
-                                      <input required="" placeholder="" type="text" class="input" id="nombre2" name="nombre2">
-                                      <span>Apellido</span>
-                                  </label>
-                              </div>  
-                                      
-                              <label>
-                                  <input required="" placeholder="" type="email" class="input" id="emailregistro" name="email">
-                                  <span>Email</span>
-                              </label> 
-                                  
-                              <label>
-                                  <input required="" placeholder="" type="password" class="input" id="passwordreg" name="passwordreg">
-                                  <span>Contraseña</span>
-                              </label>
-                              <button class="submit" value="Enviar" onclick="validar()">Enviar</button>
-                              
-                          </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+  
     </div>
-</section>
-
-
-  <footer>
-    
-    <div class="container">
-      <div class="row">
-        <div class="col" id="socialnetworks">
-          <h4>Redes Sociales</h4>
+    <div class="row">
+      <div class="col-3"></div>
+    <div class="col-6 themed-grid-col">
+      <div><h5 class="font-weight-bold mb-3 text-center">Equipo</h5></div>
+      <div class="card">
+        <img src="{% static 'imagenes/samsung-galaxy-s24-ultra-5g_1000x.webp' %}" class="card-img-top" alt="iphone 14 pro">
+        <div class="card-body">
+          <h5 class="card-title">Galaxy S23 Ultra</h5>
+          <p class="card-text">Samsung </p>
+          <h5>$1.099.990</h5>
+          <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            Agregar al carrito
+          </a>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito de compras</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div>
           <ul>
-            <li><a href="facebook"><img src="{% static 'imagenes/logo-facebook.png' %}" alt="Facebook" width="25"> SkyPhone</a>  </li>
-            <li><a href="X"><img src="{% static 'imagenes/logo-x.webp' %} " alt="X" width="26"> SkyPhone</a> </li>
-            <li><a href="Instagram"><img src="{% static 'imagenes/logo-ig.png' %} " alt="Instagram" width="35"> SkyPhone</a></li>
-          </ul>
-        </div>
-        <div class="col"></div>
-        <div class="col">
-          <h4 >Enlaces</h4>
+            <li> 1x Galaxy S23 Ultra</li>
+          </ul>    </div>
+              <div class="dropdown mt-3">
+                <button class="btn btn-secondary" type="button">
+                  Finalizar Compra
+                </button>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <h6>Especificaciones Técnicas</h6>
           <ul>
-            <li><a href="{% url 'index' %}">Inicio</a></li>
-            <li><a href="{% url 'contacto' %}">Contacto</a></li>
-            <li><a href="{% url 'nosotros' %}">Sobre Nosotros</a></li>
-            <!-- <li><a href="normativas.html">Normativas Legales</a></li> -->
+            <li>Sistema Operativo Android</li>
+            <li>256 GB</li>
+            <li>Huella Dactilar</li>
+            <li>Pantalla 6.8"</li>
+            <li>Carga rápida</li>
           </ul>
-        </div>
+          <p>El Samsung Galaxy S23 Ultra destaca por su diseño refinado, una experiencia de uso cómoda, y una pantalla clara y nítida que garantiza una visualización perfecta incluso bajo la luz solar directa.<br>
+            <br>
+            Con actualizaciones que han mejorado su rendimiento y las capacidades de la cámara, el Galaxy S23 Ultra es una elección sólida para aquellos que buscan una experiencia premium. Además, la inclusión de One UI 6.0 ha revolucionado la interacción con el dispositivo. <br>
+            <br>
+            Explorar el mundo de la tecnología con el Samsung Galaxy S23 a través de Entel se traduce en una experiencia inigualable, donde la velocidad y la eficiencia de este smartphone se fusionan para ofrecer una conectividad superior.</p>
+          <br>
         </div>
       </div>
-      <ul>
-        
-      </ul>
     </div>
-  </footer>
+      
+  
+    <br>
+
+
+
+    <footer>
+    
+      <div class="container">
+        <div class="row">
+          <div class="col" id="socialnetworks">
+            <h4>Redes Sociales</h4>
+            <ul>
+              <li><a href="facebook"><img src="{% static 'imagenes/logo-facebook.png' %}" alt="Facebook" width="25"> SkyPhone</a>  </li>
+              <li><a href="X"><img src="{% static 'imagenes/logo-x.webp' %} " alt="X" width="26"> SkyPhone</a> </li>
+              <li><a href="Instagram"><img src="{% static 'imagenes/logo-ig.png' %} " alt="Instagram" width="35"> SkyPhone</a></li>
+            </ul>
+          </div>
+          <div class="col"></div>
+          <div class="col">
+            <h4 >Enlaces</h4>
+            <ul>
+              <li><a href="{% url 'index' %}">Inicio</a></li>
+              <li><a href="{% url 'contacto' %}">Contacto</a></li>
+              <li><a href="{% url 'nosotros' %}">Sobre Nosotros</a></li>
+              <!-- <li><a href="normativas.html">Normativas Legales</a></li> -->
+            </ul>
+          </div>
+          </div>
+        </div>
+        <ul>
+          
+        </ul>
+      </div>
+    </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
