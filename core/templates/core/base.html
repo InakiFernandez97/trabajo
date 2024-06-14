@@ -1,0 +1,46 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyPhone - Inicio</title>
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="{% static 'js/login.js' %}"></script>
+</head>
+<header>
+
+
+<footer>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col" id="socialnetworks">
+              <h4>Redes Sociales</h4>
+              <ul>
+                <li><a href="facebook"><img src="{% static 'imagenes/logo-facebook.png' %}" alt="Facebook" width="25"> SkyPhone</a>  </li>
+                <li><a href="X"><img src="{% static 'imagenes/logo-x.webp' %} " alt="X" width="26"> SkyPhone</a> </li>
+                <li><a href="Instagram"><img src="{% static 'imagenes/logo-ig.png' %} " alt="Instagram" width="35"> SkyPhone</a></li>
+              </ul>
+            </div>
+            <div class="col"></div>
+            <div class="col">
+              <h4 >Enlaces</h4>
+              <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li><a href="{% url 'nosotros' %}">Sobre Nosotros</a></li>
+                <!-- <li><a href="normativas.html">Normativas Legales</a></li> -->
+              </ul>
+            </div>
+            </div>
+          </div>
+          <ul>
+            
+          </ul>
+        </div>
+      </footer>
+      <script src="{% static 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' %}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    

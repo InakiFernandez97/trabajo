@@ -1,0 +1,164 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto - Formulario</title>
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static 'css/contact_style.css' %}">
+  <script src="{% static 'js/login.js' %}"></script>
+
+</head>
+<header>
+
+
+  <div class="ms-auto">
+  </div>
+  <a class="nav-link ms-0" data-bs-toggle="offcanvas" href="#offcanvasExample">Carrito de compras</a>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito de compras</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        No hay nada en tu carrito de compras.
+      </div>
+      <div class="dropdown mt-3">
+        </ul>
+      </div>
+    </div>
+  </div>
+  <a class="nav-link ms-0" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="{% url 'index' %}" method="post" onsubmit="return validarLogin();">
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="loginButton">Iniciar sesión</button>
+      
+                <a href="{% url 'registro' %}"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Registrarse</button></a>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+</header>
+<body>
+
+
+<nav class="navbar navbar-expand-lg p-3 mb-2 bg-light text-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}"><img loading="lazy" src="{% static 'imagenes/logo.png'%}" height="100" width="100" alt="Logo" class="logo"></a>
+      <a class="navbar-brand" href="{% url 'index' %}">SkyPhone</a>
+      <button class="navbar-toggler" type="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
+          </li>
+          <li><a class="nav-link active" aria-current="page" href="{% url 'catalogo' %}">Catálogo</a></li>
+
+          <li><a class="nav-link active" aria-current="page" href="{% url 'nosotros' %}">Nosotros</a></li>
+          <li><a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">Contacto</a></li>
+
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar equipo" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+  <div class="card text-center text-dark px-5" ><br>
+    <div class="form_contact_img"><img src="{% static 'imagenes/contact-form.png' %}" alt="imagen_formulario" height="75" width="75" ></div>
+    <br>
+    <div class="contactformm"><form class="form" id="contactform">
+      <div class="title">Formulario de contacto</div>
+      <input type="text" placeholder="Nombre" name="nombre" id="nombre">
+      <input type="text"placeholder="Apellido" name="apellido" id="apellido">
+      <input type="text"placeholder="Correo" name="correo" id="correo">
+      <textarea placeholder="Mensaje" name="mensaje" id="mensaje"></textarea>
+      
+       <div><button type="submit">Enviar</button>
+      <button type="reset">Limpiar</button></div>
+      
+      
+  </form></div>
+    
+    <br>
+  </div></div></div>
+    <br>
+    <div class="row">
+
+</div>
+
+<br>
+<footer>
+    
+  <div class="container">
+    <div class="row">
+      <div class="col" id="socialnetworks">
+        <h4>Redes Sociales</h4>
+        <ul>
+          <li><a href="facebook"><img src="{% static 'imagenes/logo-facebook.png' %}" alt="Facebook" width="25"> SkyPhone</a>  </li>
+          <li><a href="X"><img src="{% static 'imagenes/logo-x.webp' %} " alt="X" width="26"> SkyPhone</a> </li>
+          <li><a href="Instagram"><img src="{% static 'imagenes/logo-ig.png' %} " alt="Instagram" width="35"> SkyPhone</a></li>
+        </ul>
+      </div>
+      <div class="col"></div>
+      <div class="col">
+        <h4 >Enlaces</h4>
+        <ul>
+          <li><a href="{% url 'index' %}">Inicio</a></li>
+          <li><a href="{% url 'contacto' %}">Contacto</a></li>
+          <li><a href="{% url 'nosotros' %}">Sobre Nosotros</a></li>
+          <!-- <li><a href="normativas.html">Normativas Legales</a></li> -->
+        </ul>
+      </div>
+      </div>
+    </div>
+    <ul>
+      
+    </ul>
+  </div>
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <script src="{% static 'js/traducciones.js' %}"></script>
+  <script src="{% static 'js/contacto_jquery.js' %} "></script>
+</body>
+</html>
+
+   
