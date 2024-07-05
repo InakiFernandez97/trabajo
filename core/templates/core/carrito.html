@@ -4,16 +4,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SkyPhone - Inicio</title>
+  <title>Contacto - Formulario</title>
   <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static 'css/contact_style.css' %}">
   <script src="{% static 'js/login.js' %}"></script>
+
 </head>
 <header>
 
 
-<div class="ms-auto">
+  <div class="ms-auto">
   </div>
   <a class="nav-link ms-0" href="{% url 'carrito' %}">Carrito de compras</a>
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -32,7 +34,7 @@
   </div>
   <a class="nav-link ms-0" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
 
-    <!-- Login Modal -->
+  <!-- Login Modal -->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -61,9 +63,7 @@
       </div>
     </div>
   </div>
-</div>
-
-  <br>
+  </div>
 
 
 
@@ -72,9 +72,9 @@
 <body>
 
 
-  <nav class="navbar navbar-expand-lg p-3 mb-2 bg-light text-dark">
+<nav class="navbar navbar-expand-lg p-3 mb-2 bg-light text-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'index' %}"><img loading="lazy" src="{% static 'imagenes/logo.png' %}" height="100" width="100" alt="Logo" class="logo"></a>
+      <a class="navbar-brand" href="{% url 'index' %}"><img loading="lazy" src="{% static 'imagenes/logo.png'%}" height="100" width="100" alt="Logo" class="logo"></a>
       <a class="navbar-brand" href="{% url 'index' %}">SkyPhone</a>
       <button class="navbar-toggler" type="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
         <span class="navbar-toggler-icon"></span>
@@ -85,7 +85,7 @@
             <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
           </li>
           <li><a class="nav-link active" aria-current="page" href="{% url 'catalogo' %}">Catálogo</a></li>
-    
+
           <li><a class="nav-link active" aria-current="page" href="{% url 'nosotros' %}">Nosotros</a></li>
           <li><a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">Contacto</a></li>
 
@@ -97,68 +97,75 @@
       </div>
     </div>
   </nav>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" >
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="card">
-          <img src="{% static 'imagenes/apple_black_banner.webp' %}">
-        </div>
-      </div>
-      <div class="carousel-item">
-          <div class="card"><img src="{% static 'imagenes/S24_Ultra_Banner.webp' %} " class="" alt="iphone 14 pro" ></div>
-        
-      </div>
-      <div class="carousel-item">
-        <div class="card">
-          <img src="{% static 'imagenes/Galaxy-S23-banner.jpg' %}" class="" alt="samsung s23" >
-        </div>
-        
-      </div>
+  <div class="row">
+  <div class="col-8">
+  <div class="card text-center text-dark px-5">
+    <div class="col-12"><br><h1>Productos</h1></div>
+    <div class="row">{% for producto in productos%}
+                      <div class="col-6">
+                        <div class="card" style="height: 10rem; width: 23rem; margin: 5px 0px;">
+                          <div class="card-body">
+                            <h5 class="card-title"> {{producto.nombre}}</h5>
+                            <p class="card-text"> {{producto.categoria}}</p>
+                            <p class="card-text"> {{producto.precio}}</p>
+                            <a href="{% url 'Add' producto.id %}" class="btn-primary"> Agregar al carrito</a>
+                          </div>
+
+                        </div>
+
+
+                      </div>
+                      {% endfor %}
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Siguiente</span>
-    </button>
-  </div>
-
-
-  <footer>
+    </div>
+</div>
+  <div class="col-4">
+  <div class="card text-center text-dark px-5" >
+    {% include "core/carritoo.html" %}
     
-    <div class="container">
-      <div class="row">
-        <div class="col" id="socialnetworks">
-          <h4>Redes Sociales</h4>
-          <ul>
-            <li><a href="facebook"><img src="{% static 'imagenes/logo-facebook.png' %}" alt="Facebook" width="25"> SkyPhone</a>  </li>
-            <li><a href="X"><img src="{% static 'imagenes/logo-x.webp' %} " alt="X" width="26"> SkyPhone</a> </li>
-            <li><a href="Instagram"><img src="{% static 'imagenes/logo-ig.png' %} " alt="Instagram" width="35"> SkyPhone</a></li>
-          </ul>
-        </div>
-        <div class="col"></div>
-        <div class="col">
-          <h4 >Enlaces</h4>
-          <ul>
-            <li><a href="{% url 'index' %}">Inicio</a></li>
-            <li><a href="{% url 'contacto' %}">Contacto</a></li>
-            <li><a href="{% url 'nosotros' %}">Sobre Nosotros</a></li>
-            <!-- <li><a href="normativas.html">Normativas Legales</a></li> -->
-          </ul>
-        </div>
-        </div>
-      </div>
-      <ul>
-        
-      </ul>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <br>
+  </div></div></div>
+    <br>
+    <div class="row">
 
+</div>
+
+<br>
+<footer>
+    
+  <div class="container">
+    <div class="row">
+      <div class="col" id="socialnetworks">
+        <h4>Redes Sociales</h4>
+        <ul>
+          <li><a href="facebook"><img src="{% static 'imagenes/logo-facebook.png' %}" alt="Facebook" width="25"> SkyPhone</a>  </li>
+          <li><a href="X"><img src="{% static 'imagenes/logo-x.webp' %} " alt="X" width="26"> SkyPhone</a> </li>
+          <li><a href="Instagram"><img src="{% static 'imagenes/logo-ig.png' %} " alt="Instagram" width="35"> SkyPhone</a></li>
+        </ul>
+      </div>
+      <div class="col"></div>
+      <div class="col">
+        <h4 >Enlaces</h4>
+        <ul>
+          <li><a href="{% url 'index' %}">Inicio</a></li>
+          <li><a href="{% url 'contacto' %}">Contacto</a></li>
+          <li><a href="{% url 'nosotros' %}">Sobre Nosotros</a></li>
+          <!-- <li><a href="normativas.html">Normativas Legales</a></li> -->
+        </ul>
+      </div>
+      </div>
+    </div>
+    <ul>
+      
+    </ul>
+  </div>
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <script src="{% static 'js/traducciones.js' %}"></script>
+  <script src="{% static 'js/contacto_jquery.js' %} "></script>
 </body>
 </html>
-  
-    
+
    
