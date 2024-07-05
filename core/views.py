@@ -56,7 +56,7 @@ def limpiar_carrito(request):
     return redirect("carrito")
 
 def gestionarproductos(request):
-    Producto = Producto.objects.all()
-    return render(request, 'core/gestionarproductos.html',{"producto":productos})
+    productoslista = Producto.objects.all()
+    return render(request, 'core/gestionarproductos.html',{ 'productoslista':productoslista})
 
     
