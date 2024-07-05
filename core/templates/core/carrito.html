@@ -97,28 +97,10 @@
       </div>
     </div>
   </nav>
-  <div class="row">
-  <div class="col-8">
-  <div class="card text-center text-dark px-5">
-    <div class="col-12"><br><h1>Productos</h1></div>
-    <div class="row">{% for producto in productos%}
-                      <div class="col-6">
-                        <div class="card" style="height: 10rem; width: 23rem; margin: 5px 0px;">
-                          <div class="card-body">
-                            <h5 class="card-title"> {{producto.nombre}}</h5>
-                            <p class="card-text"> {{producto.categoria}}</p>
-                            <p class="card-text"> {{producto.precio}}</p>
-                            <a href="{% url 'Add' producto.id %}" class="btn-primary"> Agregar al carrito</a>
-                          </div>
 
-                        </div>
-
-
-                      </div>
-                      {% endfor %}
-    </div>
-    </div>
 </div>
+
+
   <div class="col-4">
   <div class="card text-center text-dark px-5" >
     {% include "core/carritoo.html" %}

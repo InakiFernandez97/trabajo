@@ -12,7 +12,8 @@ def registro(request):
     return render(request, 'core/registro.html')
     
 def catalogo(request):
-    return render(request, 'core/catalogo.html')
+    productos = Producto.objects.all()
+    return render(request, 'core/catalogo.html',{ 'productos':productos})
 
 def nosotros(request):
     return render(request, 'core/nosotros.html')
