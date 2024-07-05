@@ -4,13 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"></head>
 <body>
-    <h1>alo</h1>
-    <ul>
-        {% for c in productosLista %}
-        <li>{{p.nombre}}</li>
-        {% endfor %}
-    </ul>
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <h2>Registro de Equipos</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/registrarEquipo/" method="post"> {% csrf_token  %}
+                    <div class="form-group">
+                        <input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre" maxlength="30" required></div>
+                    <div class="form-group">
+                        <input type="text" id="txtCategoria" name="txtCategoria" class="form-control" placeholder="Categoria" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtPrecio" name="txtPrecio" class="form-control" placeholder="Precio" minlength="0" maxlength="10" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white"> Guardar</button>
+                    </div>  
+                        
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+<div class="container py-4">
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <h1>Listado de productos</h1>
+        <div class="table-responsive py-2">
+            <table class="table table-striped">
+
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Marca</th>
+                        <th>Precio</th>
+                        <th colspan="2">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in productoslista %}
+                    <tr>
+                        <td>{{p.nombre}}</td>
+                        <td>{{p.categoria}}</td>
+                        <td>{{p.precio}}</td>
+                        <td><a href="edicionEquipo/{{p.nombre}}" class="btn btn-info">Editar</a></td>
+                        <td><a href="eliminarEquipo/{{p.nombre}}" class="btn btn-danger">Eliminar</a></td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+
+        
+    </div>
+</div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 </body>
 </html>

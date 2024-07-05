@@ -59,4 +59,16 @@ def gestionarproductos(request):
     productoslista = Producto.objects.all()
     return render(request, 'core/gestionarproductos.html',{ 'productoslista':productoslista})
 
+def registrarEquipo(request):
+    nombre = request.POST['txtNombre']
+    categoria = request.POST['txtCategoria']
+    precio = request.POST['txtPrecio']
+
+    equipo = Producto.objects.create(nombre=nombre, categoria=categoria, precio=precio)
+    return redirect('/gestionarproductos/')
     
+
+def eliminarEquipo(request, nombre):
+    producto = Producto.objects.get(nombre=nombre)
+    producto.delete()
+    return redirect('/gestionarproductos/')
