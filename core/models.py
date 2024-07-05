@@ -10,6 +10,19 @@ class Producto(models.Model):
 
     def __str__(self):
         return f'{self.nombre} -> {self.precio}' 
+""""    
+#class Usuario(models.Model):
+#    nombre = models.CharField(max_length=50)
+#    apellido = models.CharField(max_length=50)
+#    email = models.EmailField(max_length=70)
+#    password = models.CharField(max_length=30)
+#
+#    def __str__(self):
+#        return (
+#            str(self.nombre) + " "
+#            + str(self.apellido)
+#        )"""
+
 
 
 class Genero(models.Model):
@@ -20,28 +33,28 @@ class Genero(models.Model):
         return str(self.genero)
 
 
-class Usuario(models.Model):
-    rut = models.CharField(primary_key=True, max_length=10)
-    nombre = models.CharField(max_length=20)
-    apellido_paterno = models.CharField(max_length=20)
-    apellido_materno = models.CharField(max_length=20)
-    fecha_nacimiento = models.DateField(blank=False, null=False)
-    id_genero = models.ForeignKey(
-        "Genero", on_delete=models.CASCADE, db_column="idGenero"
-    )
-    telefono = models.CharField(max_length=12)
-    edad = models.IntegerField()
-    email = models.EmailField(unique=True, max_length=100, blank=True, null=True)
-    direccion = models.CharField(max_length=50, blank=True, null=True)
-    activo = models.BooleanField()
+#class Usuario(models.Model):
+#    rut = models.CharField(primary_key=True, max_length=10)
+#    nombre = models.CharField(max_length=20)
+#    apellido_paterno = models.CharField(max_length=20)
+#    apellido_materno = models.CharField(max_length=20)
+#    fecha_nacimiento = models.DateField(blank=False, null=False)
+#    id_genero = models.ForeignKey(
+#        "Genero", on_delete=models.CASCADE, db_column="idGenero"
+ #   )
+  #  telefono = models.CharField(max_length=12)
+   # edad = models.IntegerField()
+#    email = models.EmailField(unique=True, max_length=100, blank=True, null=True)
+#    direccion = models.CharField(max_length=50, blank=True, null=True)
+#    activo = models.BooleanField()
 
-    def __str__(self):
-        return (
-            str(self.nombre)
-            + " "
-            + str(self.apellido_paterno)
-            + " "
-            + str(self.apellido_materno)
-        )
+ #   def __str__(self):
+  #      return (
+   #         str(self.nombre)
+    #        + " "
+     #       + str(self.apellido_paterno)
+      #      + " "
+        #    + str(self.apellido_materno)
+       # )
     
 

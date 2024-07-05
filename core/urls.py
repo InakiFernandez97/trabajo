@@ -1,5 +1,6 @@
 from django.urls import path, include
 from .views import *
+from core import views
 
 urlpatterns = [
     path('', index, name='index'),
@@ -14,5 +15,6 @@ urlpatterns = [
     path('eliminar/<int:producto_id>/', eliminar_producto, name="Del"),
     path('restar/<int:producto_id>/', restar_producto, name="Sub"),
     path('limpiar/', limpiar_carrito, name="CLS"),
+    
 
 ]
