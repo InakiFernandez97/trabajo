@@ -54,3 +54,9 @@ def limpiar_carrito(request):
     carrito = Carrito(request)
     carrito.limpiar()
     return redirect("carrito")
+
+def gestionarproductos(request):
+    Producto = Producto.objects.all()
+    return render(request, 'core/gestionarproductos.html',{"producto":productos})
+
+    
