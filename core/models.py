@@ -14,18 +14,18 @@ class Producto(models.Model):
     
 
     
-""""   
-#class Usuario(models.Model):
-#    nombre = models.CharField(max_length=50)
-#    apellido = models.CharField(max_length=50)
-#    email = models.EmailField(max_length=70)
-#    password = models.CharField(max_length=30)
-#
-#    def __str__(self):
-#        return (
-#            str(self.nombre) + " "
-#            + str(self.apellido)
-#        )"""
+   
+class Usuario(models.Model):
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    email = models.EmailField(max_length=70)
+    password = models.CharField(max_length=30)
+
+    def __str__(self):
+        return (
+            str(self.nombre) + " "
+            + str(self.apellido)
+        )
 
 
 

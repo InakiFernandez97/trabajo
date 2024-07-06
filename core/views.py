@@ -1,4 +1,6 @@
 from django.shortcuts import redirect, render
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
 
 from core.carrito import Carrito
 from core.models import Producto
@@ -89,3 +91,26 @@ def editarEquipo(request):
     equipo.save()
 
     return redirect('/gestionarproductos/')
+
+def loginSession(request):
+    if request.method=="POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        if username=="j.riquelmee" and password=="pass1234":
+            request.session["user"] = username
+            usuarios = Usuario.objects.all()
+            context = {
+                "usuarios":usuarios,
+            }
+            return render(request,"pages/crud.html",context)
+        else:
+            context = {
+                "mensaje":"Usuario o contraseña incorrecta",
+                "design":"alert alert-danger w-50 mx-auto text-center",
+            }
+            return render(request,"pages/login.html",context)
+    else:
+        context = {
+
+        }
+        return render(request,"pages/login.html",context)
