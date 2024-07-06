@@ -69,6 +69,6 @@ def registrarEquipo(request):
     
 
 def eliminarEquipo(request, nombre):
-    producto = Producto.objects.get(nombre=nombre)
+    producto = Producto.objects.get(nombre='txtNombre')
     producto.delete()
     return redirect('/gestionarproductos/')

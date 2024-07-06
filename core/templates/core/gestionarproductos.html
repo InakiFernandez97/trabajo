@@ -52,7 +52,7 @@
                         <td>{{p.categoria}}</td>
                         <td>{{p.precio}}</td>
                         <td><a href="edicionEquipo/{{p.nombre}}" class="btn btn-info">Editar</a></td>
-                        <td><a href="eliminarEquipo/{{p.nombre}}" class="btn btn-danger">Eliminar</a></td>
+                        <td><a href="{% url 'eliminarEquipo' }" class="btn btn-danger">Eliminar</a></td>
                     </tr>
 
                     {% endfor %}
