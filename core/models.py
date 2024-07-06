@@ -4,7 +4,8 @@ from django.db import models
 # Create your models here.
 
 class Producto(models.Model):
-    nombre = models.CharField(primary_key=True,max_length=64)
+    id = models.AutoField(primary_key=True, default=None)
+    nombre = models.CharField(max_length=64, unique=True)
     categoria = models.CharField(max_length=32)
     precio = models.IntegerField()
     

@@ -2,12 +2,12 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th  scope="row" colspan="3" class="text-center"> CARRITO</th>
+                <th  scope="row" colspan="3" class="text-center"> Carrito de Compras</th>
             </tr>
             <tr>
-                <th scope="col"> NOMBRE</th>
-                <th scope="col"> PRECIO</th>
-                <th scope="col"> CANTIDAD</th>
+                <th scope="col"> Productos</th>
+                <th scope="col"> </th>
+                <th scope="col"> Precio Total</th>
             </tr>
         </thead>
 
@@ -19,8 +19,9 @@
         <td>{{value.nombre}}</td>
         <td>{{value.precio}}</td>
         <td>{{value.acumulado}}
-            <a href="{% url 'Add' value.producto_id %}" class="badge btn btn-dark badge-dark">+</a>
             <a href="{% url 'Sub' value.producto_id %}" class="badge btn btn-dark badge-dark">-</a>
+            <a href="{% url 'Add' value.producto_id %}" class="badge btn btn-dark badge-dark">+</a>
+            
 
 
         </td>
@@ -47,5 +48,5 @@
 </div>
 <div class="row text-center">
     <div class="col-6"><a href="{% url 'CLS' %}" class="btn btn-danger">Limpiar</a></div>
-    <div class="col-6"><a href="#" class="btn btn-success">Guardar</a></div>
+    <div class="col-6"><a href="#" class="btn btn-success">Checkout</a></div>
 </div>
