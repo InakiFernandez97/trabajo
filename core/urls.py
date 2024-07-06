@@ -17,5 +17,7 @@ urlpatterns = [
     path('limpiar/', limpiar_carrito, name="CLS"),
     path('gestionarproductos/', gestionarproductos, name='gestionarproductos'),
     path('registrarEquipo/', views.registrarEquipo, name='registrarEquipo'),
-    path('eliminarEquipo/<nombre>', views.eliminarEquipo, name='eliminarEquipo'),
+    path('eliminarEquipo/<str:nombre>', views.eliminarEquipo, name='eliminarEquipo'),
+    path('edicionEquipo/<str:nombre>', views.edicionEquipo, name='edicionEquipo'),
+    path('editarEquipo/', views.editarEquipo),
 ]

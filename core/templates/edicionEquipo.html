@@ -72,6 +72,8 @@
 <body>
 
 
+
+
 <nav class="navbar navbar-expand-lg p-3 mb-2 bg-light text-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'index' %}"><img loading="lazy" src="{% static 'imagenes/logo.png'%}" height="100" width="100" alt="Logo" class="logo"></a>
@@ -97,73 +99,34 @@
       </div>
     </div>
   </nav>
-
-</div>
-<div class="row">
+  <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="width: 50%; margin-left: auto; margin-right: auto;">
-        <h2>Registro de Equipos</h2>
-        <div class="card">
-            <div class="card-body">
-                <form action="/registrarEquipo/" method="post"> {% csrf_token  %}
-                    <div class="form-group">
-                        <input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre" maxlength="30" required></div> <br>
-                    <div class="form-group">
-                        <input type="text" id="txtCategoria" name="txtCategoria" class="form-control" placeholder="Marca" maxlength="50" required>
-                    </div><br>
-                    <div class="form-group">
-                        <input type="text" id="txtPrecio" name="txtPrecio" class="form-control" placeholder="Precio" minlength="0" maxlength="10" required>
-                    </div><br>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-block text-white"> Guardar</button>
-                    </div>  
-                        
-                </form>
-            </div>
-
-        </div>
-
-
-    </div>
-<div class="container py-4">
-    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8" style="width: 50%; margin-left: auto; margin-right: auto;">
-        <h1>Listado de productos</h1>
-        <div class="table-responsive py-2">
-            <table class="table table-striped">
-
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Marca</th>
-                        <th>Precio</th>
-                        <th colspan="2">Opciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for p in productoslista %}
-                    <tr>
-                        <td>{{p.nombre}}</td>
-                        <td>{{p.categoria}}</td>
-                        <td>{{p.precio}}</td>
-                        <td><a href="../edicionEquipo/{{p.nombre}}" class="btn btn-info">Editar</a></td>
-                        <td><a href="../eliminarEquipo/{{p.nombre}}" class="btn btn-danger">Eliminar</a></td>
-                    </tr>
-
-                    {% endfor %}
-                </tbody>
-
-            </table>
-        </div>
-
+   <h2>Edición de equipos</h2>
+   <div class="card col-6">
+    <div class="card-body">
+        <form action="/editarEquipo/" method="post"> {% csrf_token  %}
+            <div class="form-group">
+                <h5>Nombre: (no modificable)</h5>
+                <input type="text" id="txtNombre" name="txtNombre" value="{{equipo.nombre}}" class="form-control" placeholder="Nombre" maxlength="30" readonly required></div><br>
+            <div class="form-group"> <h5>Modelo: (no modificable)</h5>
+                <input type="text" id="txtCategoria" name="txtCategoria" value="{{equipo.categoria}}" class="form-control" placeholder="Categoria" maxlength="50" readonly required>
+            </div> <br>
+            <div class="form-group"> <h5>Precio:</h5>
+                <input type="text" id="txtPrecio" name="txtPrecio" value="{{equipo.precio}}" class="form-control" placeholder="Precio" minlength="0" maxlength="10" required>
+            </div> <br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block text-white"> Guardar</button>
+            </div>  
+                
+        </form>
         
     </div>
-    
-
 </div>
 </div>
 
 </div>
 
-
+<br>
 
 <footer>
 

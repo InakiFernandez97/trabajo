@@ -13,7 +13,7 @@ def registro(request):
     
 def catalogo(request):
     productos = Producto.objects.all()
-    return render(request, 'core/catalogo.html',{ 'productos':productos})
+    return render(request, 'core/catalogo.html',{'productos':productos})
 
 def nosotros(request):
     return render(request, 'core/nosotros.html')
@@ -66,9 +66,26 @@ def registrarEquipo(request):
 
     equipo = Producto.objects.create(nombre=nombre, categoria=categoria, precio=precio)
     return redirect('/gestionarproductos/')
-    
 
 def eliminarEquipo(request, nombre):
-    producto = Producto.objects.get(nombre='txtNombre')
-    producto.delete()
+    equipo = Producto.objects.get(nombre=nombre)
+    equipo.delete()
+    return redirect('/gestionarproductos/')
+
+def edicionEquipo(request,nombre):
+    equipo = Producto.objects.get(nombre=nombre)
+    return render(request, "edicionEquipo.html", {"equipo": equipo})
+
+def editarEquipo(request):
+    nombre = request.POST['txtNombre']
+    categoria = request.POST['txtCategoria']
+    precio = request.POST['txtPrecio']
+
+    equipo = Producto.objects.get(nombre=nombre)
+    equipo.nombre = nombre
+    equipo.categoria = categoria
+    equipo.precio = precio
+
+    equipo.save()
+
     return redirect('/gestionarproductos/')
