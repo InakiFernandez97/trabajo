@@ -20,4 +20,7 @@ urlpatterns = [
     path('eliminarEquipo/<str:nombre>', views.eliminarEquipo, name='eliminarEquipo'),
     path('edicionEquipo/<str:nombre>', views.edicionEquipo, name='edicionEquipo'),
     path('editarEquipo/', views.editarEquipo),
+    path("login", views.conectar, name="login"),
+    path("logout", views.desconectar, name="logout"),
+
 ]

@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 
 from core.carrito import Carrito
-from core.models import Producto
+from core.models import Producto, Usuario
 
 # Create your views here.
 
@@ -57,6 +57,8 @@ def limpiar_carrito(request):
     carrito.limpiar()
     return redirect("carrito")
 
+
+@login_required
 def gestionarproductos(request):
     productoslista = Producto.objects.all()
     return render(request, 'core/gestionarproductos.html',{ 'productoslista':productoslista})
@@ -94,23 +96,57 @@ def editarEquipo(request):
 
 def loginSession(request):
     if request.method=="POST":
-        username = request.POST["username"]
+        username = request.POST["email"]
         password = request.POST["password"]
-        if username=="j.riquelmee" and password=="pass1234":
+        if username=="j.riquelmee@gmail.com" and password=="pass12345":
             request.session["user"] = username
             usuarios = Usuario.objects.all()
             context = {
                 "usuarios":usuarios,
             }
-            return render(request,"pages/crud.html",context)
+            return render(request,"/gestionarproductos/",context)
         else:
             context = {
                 "mensaje":"Usuario o contraseña incorrecta",
                 "design":"alert alert-danger w-50 mx-auto text-center",
             }
-            return render(request,"pages/login.html",context)
+            return render(request,"login.html",context)
     else:
         context = {
 
         }
-        return render(request,"pages/login.html",context)
+        return render(request,"login.html",context)
+    
+def conectar(request):
+    if request.method=="POST":
+        username = request.POST["email"]
+        password = request.POST["password"]
+        user = authenticate(request,username=username,password=password)
+        if user is not None:
+            login(request,user)
+            usuarios = Usuario.objects.all()
+            context = {
+                "usuarios":usuarios,
+            }
+            return redirect('/gestionarproductos/')
+        else:
+            context = {
+                "mensaje":"Usuario o contraseña incorrecta",
+                "design":"alert alert-danger w-50 mx-auto text-center",
+            }
+            return render(request,"core/login.html",context)
+    else:
+        context = {
+
+        }
+        return render(request,"core/login.html",context)
+    
+def desconectar(request):   
+    if request.user.is_authenticated:
+        logout(request)
+    
+    context = {
+        "mensaje":"Desconectado con exito",
+        "design":"alert alert-success w-50 mx-auto text-center",
+    }
+    return render(request,"core/login.html",context)
