@@ -15,7 +15,7 @@
 
 <div class="ms-auto">
   </div>
-  <a class="nav-link ms-0" data-bs-toggle="offcanvas" href="#offcanvasExample">Carrito de compras</a>
+  <a class="nav-link ms-0" href="{% url 'carrito' %}">Carrito de compras</a>
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito de compras</h5>
@@ -30,37 +30,9 @@
       </div>
     </div>
   </div>
-  <a class="nav-link ms-0" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
+  <a class="nav-link ms-0" href="{% url 'login' %}" >Iniciar sesión</a>
 
-    <!-- Login Modal -->
-  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="{% url 'index' %}" method="post" onsubmit="return validarLogin();">
-            <div class="mb-3">
-              <label for="email" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" id="loginButton">Iniciar sesión</button>
-      
-                <a href="{% url 'registro' %}"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Registrarse</button></a>
-              </div>
-            </div>
-          </form>
-        </div>
-        
-      </div>
-    </div>
-  </div>
+
 </div>
 
   <br>
@@ -145,7 +117,6 @@
             <li><a href="{% url 'index' %}">Inicio</a></li>
             <li><a href="{% url 'contacto' %}">Contacto</a></li>
             <li><a href="{% url 'nosotros' %}">Sobre Nosotros</a></li>
-            <!-- <li><a href="normativas.html">Normativas Legales</a></li> -->
           </ul>
         </div>
         </div>

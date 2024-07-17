@@ -4,15 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nosotros</title>
+  <title>SkyPhone - Catálogo</title>
   <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="{% static 'js/login.js' %}"></script>
-
 </head>
 <header>
-
 
   <div class="ms-auto">
   </div>
@@ -27,7 +25,7 @@
         No hay nada en tu carrito de compras.
       </div>
       <div class="dropdown mt-3">
-        </ul>
+      
       </div>
     </div>
   </div>
@@ -61,20 +59,24 @@
       </div>
     </div>
   </div>
-</div>
+  </div>
 
 
 
 
 </header>
+
 <body>
 
 
   <nav class="navbar navbar-expand-lg p-3 mb-2 bg-light text-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'index' %}"><img loading="lazy" src="{% static 'imagenes/logo.png' %}" height="100" width="100" alt="Logo" class="logo"></a>
+      <a class="navbar-brand" href="{% url 'index' %}"><img loading="lazy" src="{% static 'imagenes/logo.png' %}" height="100" width="100"
+          alt="Logo" class="logo"></a>
       <a class="navbar-brand" href="{% url 'index' %}">SkyPhone</a>
-      <button class="navbar-toggler" type="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+      <button class="navbar-toggler" type="btn btn-primary" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -83,7 +85,7 @@
             <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
           </li>
           <li><a class="nav-link active" aria-current="page" href="{% url 'catalogo' %}">Catálogo</a></li>
-    
+
           <li><a class="nav-link active" aria-current="page" href="{% url 'nosotros' %}">Nosotros</a></li>
           <li><a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">Contacto</a></li>
 
@@ -95,51 +97,82 @@
       </div>
     </div>
   </nav>
-  <div class="row">
-  <div class="col-2"></div>
-  <div class="col-8">
-  <div class="card text-center text-dark px-5" ><br><p>Somos una empresa ubicada en Viña del Mar, apasionada por conectar a las personas con la última tecnología en comunicación. Nos especializamos en la venta de teléfonos celulares de las marcas más reconocidas, ofreciendo una amplia gama de modelos y las últimas innovaciones del mercado.
-    En nuestro compromiso por brindar la mejor experiencia a nuestros clientes, nos esforzamos por mantener precios competitivos sin comprometer la calidad. Entendemos la importancia de la comunicación en la vida cotidiana y por ello nos esmeramos en ofrecer dispositivos de alta calidad a precios accesibles.
-    Nuestro equipo está compuesto por expertos en tecnología que están siempre dispuestos a asesorar y guiar a nuestros clientes, ayudándolos a encontrar el dispositivo perfecto que se adapte a sus necesidades y presupuesto. Además, nos enorgullece ofrecer un servicio al cliente excepcional, brindando atención personalizada y soluciones rápidas a cualquier consulta o problema que puedan tener nuestros clientes.
-    En resumen, somos tu destino confiable para encontrar los mejores teléfonos celulares a precios irresistibles en Viña del Mar. ¡Ven y descubre lo que tenemos para ofrecerte!</p>
-  </div></div></div>
-    <br>
-    <div class="row">
-    <div class="nosotros">
-      <img src="{% static 'imagenes/photo-nosotros.avif' %}">
-      </div>
-</div>
 
-<br>
-<footer>
+
+          <div class="col-8" style="width: 50%; margin-left: auto; margin-right: auto;">
+          <div class="card text-center text-dark px-5">
+            <br>
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <h2>Login de Acceso</h2>
+                <div class="form-floating mb-3 w-25 mx-auto">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="">
+                    <label for="email" class="form-label">Email</label>
+                </div>
+                <div class="form-floating mb-3 w-25 mx-auto">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="">
+                    <label for="password" class="form-label">Contraseña</label>
+                </div>
+                {% if mensaje %}
+                <div class='{{design}}'>
+                    {{mensaje}}
+                </div>
+                {% endif%}
+                <div class="form-floating mb-3 w-25 mx-auto">
+                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                </div>
+            </form>
+            </div>
+        </div>
+
+
+
+
+      </div>
+      
     
-  <div class="container">
-    <div class="row">
-      <div class="col" id="socialnetworks">
-        <h4>Redes Sociales</h4>
-        <ul>
-          <li><a href="facebook"><img src="{% static 'imagenes/logo-facebook.png' %}" alt="Facebook" width="25"> SkyPhone</a>  </li>
-          <li><a href="X"><img src="{% static 'imagenes/logo-x.webp' %} " alt="X" width="26"> SkyPhone</a> </li>
-          <li><a href="Instagram"><img src="{% static 'imagenes/logo-ig.png' %} " alt="Instagram" width="35"> SkyPhone</a></li>
-        </ul>
-      </div>
-      <div class="col"></div>
-      <div class="col">
-        <h4 >Enlaces</h4>
-        <ul>
-          <li><a href="{% url 'index' %}">Inicio</a></li>
-          <li><a href="{% url 'contacto' %}">Contacto</a></li>
-          <li><a href="{% url 'nosotros' %}">Sobre Nosotros</a></li>
-          <!-- <li><a href="normativas.html">Normativas Legales</a></li> -->
-        </ul>
-      </div>
+    
+    
+    
+    
+    
       </div>
     </div>
-    <ul>
-      
-    </ul>
-  </div>
-</footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    </div>
+
+
+
+    <footer>
+    
+      <div class="container">
+          <div class="row">
+              <div class="col" id="socialnetworks">
+                <h4>Redes Sociales</h4>
+                <ul>
+                  <li><a href="facebook"><img src="{% static 'imagenes/logo-facebook.png' %}" alt="Facebook" width="25"> SkyPhone</a>  </li>
+                  <li><a href="X"><img src="{% static 'imagenes/logo-x.webp' %} " alt="X" width="26"> SkyPhone</a> </li>
+                  <li><a href="Instagram"><img src="{% static 'imagenes/logo-ig.png' %} " alt="Instagram" width="35"> SkyPhone</a></li>
+                </ul>
+              </div>
+              <div class="col"></div>
+              <div class="col">
+                <h4 >Enlaces</h4>
+                <ul>
+                  <li><a href="{% url 'index' %}">Inicio</a></li>
+                  <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                  <li><a href="{% url 'nosotros' %}">Sobre Nosotros</a></li>
+                  <!-- <li><a href="normativas.html">Normativas Legales</a></li> -->
+                </ul>
+              </div>
+              </div>
+            </div>
+            <ul>
+              
+            </ul>
+          </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
 </body>
+
 </html>
